@@ -1,30 +1,18 @@
 import type { Routes } from "@angular/router"
+import { HomeComponent } from "./home/home.component"
+import { AboutComponent } from "./about/about.component"
+import { ProjectsComponent } from "./projects/projects.component"
+import { SkillsComponent } from "./skills/skills.component"
+import { ContactComponent } from "./contact/contact.component"
+import { BlogComponent } from "./blog/blog.component"
 
 export const routes: Routes = [
-  {
-    path: "",
-    loadComponent: () => import("./home/home.component").then((m) => m.HomeComponent),
-  },
-  {
-    path: "about",
-    loadComponent: () => import("./about/about.component").then((m) => m.AboutComponent),
-  },
-  {
-    path: "projects",
-    loadComponent: () => import("./projects/projects.component").then((m) => m.ProjectsComponent),
-  },
-  {
-    path: "skills",
-    loadComponent: () => import("./skills/skills.component").then((m) => m.SkillsComponent),
-  },
-  {
-    path: "contact",
-    loadComponent: () => import("./contact/contact.component").then((m) => m.ContactComponent),
-  },
-  {
-    path: "blog",
-    loadComponent: () => import("./blog/blog.component").then((m) => m.BlogComponent),
-  },
+  { path: "", component: HomeComponent },
+  { path: "about", component: AboutComponent },
+  { path: "projects", component: ProjectsComponent },
+  { path: "skills", component: SkillsComponent },
+  { path: "contact", component: ContactComponent },
+  { path: "blog", component: BlogComponent },
   { path: "**", redirectTo: "" },
 ]
 
